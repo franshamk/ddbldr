@@ -12,7 +12,7 @@ google.load('picker', '1');
 
 angular.module('app', ['app.filters', 'app.services', 'app.directives'])
     .constant('saveInterval', 15000)
-    .constant('appId', [[YOUR APPLICATION ID]]) // Please replace this with your Application ID.
+    .constant('appId', "drive-doc-builder") // Please replace this with your Application ID.
     .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/edit/:id', {
