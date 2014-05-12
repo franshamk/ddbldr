@@ -24,6 +24,7 @@ sys.path.insert(0, 'lib')
 import os
 import httplib2
 import sessions
+import logging
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext import db
@@ -145,6 +146,7 @@ class BaseDriveHandler(webapp.RequestHandler):
     # convenient for debugging to an alternative host without manually setting the
     # redirect URI.
     flow.redirect_uri = self.request.url.split('?', 1)[0].rsplit('/', 1)[0]
+    logging.debug("redirect uri: " + flow.redirect_uri)
     return flow
 
   def GetCodeCredentials(self):
